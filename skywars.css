@@ -1,0 +1,106 @@
+img {
+  max-width: 300%;
+  margin: 0 auto;
+  width: 500px;
+  height: auto;
+  display: block;
+}
+
+.gui {
+  position: relative;
+  display: inline-block;
+}
+
+.espacos1,
+.espacos2,
+.espacos3,
+.espacos4,
+.espacos5,
+.espacos6,
+.espacos7,
+.espacos8,
+.espacos9,
+.espacos10,
+.espacos11,
+.espacos12,
+.espacos13,
+.espacos14,
+.espacos15,
+.espacos16,
+.espacos17,
+.espacos18,
+.espacos19,
+.espacos20,
+.espacos21,
+.espacos22,
+.espacos23,
+.espacos24,
+.espacos25,
+.espacos26,
+.espacos27 {
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white;
+
+    /* 🔥 remoção real do fundo falso */
+    padding: 0;
+    background: none !important;
+}
+
+
+/* ----------------------------------
+   POSICIONAMENTOS (SEUS, PRESERVADOS)
+----------------------------------- */
+
+.espacos1 { top: 55.5%; left: 9%; }
+.espacos2 { top: 55.5%; left: 19%; }
+.espacos3 { top: 55.5%; left: 29.3%; }
+.espacos4 { top: 55.5%; left: 39.4%; }
+.espacos5 { top: 55.5%; left: 49.7%; }
+.espacos6 { top: 55.5%; left: 59.9%; }
+.espacos7 { top: 55.5%; left: 70.5%; }
+.espacos8 { top: 55.5%; left: 80.3%; }
+.espacos9 { top: 55.5%; left: 90.3%; }
+
+.espacos10 { top: 66.5%; left: 9%; }
+.espacos11 { top: 66.5%; left: 19%; }
+.espacos12 { top: 66.5%; left: 29.3%; }
+.espacos13 { top: 66.5%; left: 39.4%; }
+.espacos14 { top: 66.5%; left: 49.7%; }
+.espacos15 { top: 66.5%; left: 59.9%; }
+.espacos16 { top: 66.5%; left: 70.5%; }
+.espacos17 { top: 66.5%; left: 80.3%; }
+.espacos18 { top: 66.5%; left: 90.3%; }
+
+.espacos19 { top: 77.5%; left: 9%; }
+.espacos20 { top: 77.5%; left: 19%; }
+.espacos21 { top: 77.5%; left: 29.3%; }
+.espacos22 { top: 77.5%; left: 39.4%; }
+.espacos23 { top: 77.5%; left: 49.7%; }
+.espacos24 { top: 77.5%; left: 59.9%; }
+.espacos25 { top: 77.5%; left: 70.5%; }
+.espacos26 { top: 77.5%; left: 80.3%; }
+.espacos27 { top: 77.5%; left: 90.3%; }
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 🔹 imagem do item dentro dos slots */
+.item {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    pointer-events: none;
+    background: none;
+}
+
+/* 🔹 cursor ao passar o mouse */
+[class^="espacos"]:hover {
+    cursor: pointer;
+}

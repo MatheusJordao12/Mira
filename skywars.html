@@ -1,0 +1,110 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="skywars.css">
+    <title>Skywars</title>
+</head>
+<body>
+    <div class="gui">
+    <img src="inventory.png" alt="">
+    <div class="espacos1"></div>
+    <div class="espacos2"></div>
+    <div class="espacos3"></div>
+    <div class="espacos4"></div>
+    <div class="espacos5"></div>
+    <div class="espacos6"></div>
+    <div class="espacos7"></div>
+    <div class="espacos8"></div>
+    <div class="espacos9"></div>
+    <div class="espacos10"></div>
+    <div class="espacos11"></div>
+    <div class="espacos12"></div>
+    <div class="espacos13"></div>
+    <div class="espacos14"></div>
+    <div class="espacos15"></div>
+    <div class="espacos16"></div>
+    <div class="espacos17"></div>
+    <div class="espacos18"></div>
+    <div class="espacos19"></div>
+    <div class="espacos20"></div>
+    <div class="espacos21"></div>
+    <div class="espacos22"></div>
+    <div class="espacos23"></div>
+    <div class="espacos24"></div>
+    <div class="espacos25"></div>
+    <div class="espacos26"></div>
+    <div class="espacos27"></div>
+    </div>
+    <h2>Pontos: <span id="contador">0</span></h2>
+
+        <script>
+        let pontos = 0;
+        const contador = document.getElementById("contador");
+
+        const slots = Array.from(document.querySelectorAll("[class^='espacos']"));
+
+        // 👉 Quantos itens simultâneos no inventário
+        const QUANTIDADE_ITENS = 3;
+
+        // Armazena os slots que têm item atualmente
+        let slotsOcupados = [];
+
+        const itens = [
+            "skywars-assets/apple_golden.png",
+            "skywars-assets/apple_golden.png",
+            "skywars-assets/apple_golden.png",
+            "skywars-assets/apple_golden.png",
+            "skywars-assets/apple_golden.png",
+            "skywars-assets/apple_golden.png",
+            "skywars-assets/apple_golden.png",
+            "skywars-assets/apple_golden.png"
+        ];
+
+        function gerarItem(slot) {
+            const itemEscolhido = itens[Math.floor(Math.random() * itens.length)];
+
+            slot.innerHTML = `<img src="${itemEscolhido}" class="item">`;
+
+            if (!slotsOcupados.includes(slot)) {
+                slotsOcupados.push(slot);
+            }
+        }
+
+        function gerarItensIniciais() {
+            while (slotsOcupados.length < QUANTIDADE_ITENS) {
+                const novoSlot = slots[Math.floor(Math.random() * slots.length)];
+
+                if (!slotsOcupados.includes(novoSlot)) {
+                    gerarItem(novoSlot);
+                }
+            }
+        }
+
+        // Ao clicar em um slot
+        slots.forEach((slot) => {
+            slot.addEventListener("click", () => {
+                if (slotsOcupados.includes(slot)) {
+
+                    // Remove item do slot
+                    slot.innerHTML = "";
+
+                    // Remove da lista de ocupados
+                    slotsOcupados = slotsOcupados.filter(s => s !== slot);
+
+                    // Adiciona ponto
+                    pontos++;
+                    contador.textContent = pontos;
+
+                    // Gera novo item em outro lugar
+                    gerarItensIniciais();
+                }
+            });
+        });
+
+        gerarItensIniciais();
+    </script>
+
+</body>
+</html>

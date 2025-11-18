@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+
+.botoes {
+    width: 950px;
+    margin: 0 auto;
+    margin-top: 20%;
+}
+
+.botoes button {
+    font-size: 50px;
+    width: 450px;
+    height: 100px;
+    border: none;
+    background-color: rgb(255, 205, 67);
+    color: white;
+    border-radius: 5px;
+}
